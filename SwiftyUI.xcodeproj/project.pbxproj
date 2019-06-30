@@ -23,6 +23,7 @@
 		3D9C432E2274629C000A6585 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D9C432C2274629C000A6585 /* LaunchScreen.storyboard */; };
 		3D9C433422746323000A6585 /* SwiftyUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D9C429022745894000A6585 /* SwiftyUI.framework */; };
 		3D9C433522746323000A6585 /* SwiftyUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3D9C429022745894000A6585 /* SwiftyUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F728731822C8D0E1001B58A5 /* SwiftyUI_Header.png in Resources */ = {isa = PBXBuildFile; fileRef = F728731722C8D0E0001B58A5 /* SwiftyUI_Header.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,7 +99,7 @@
 		3D9C432A2274629C000A6585 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3D9C432D2274629C000A6585 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3D9C432F2274629C000A6585 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F728731622C8CF5B001B58A5 /* SwiftyUI_Header.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SwiftyUI_Header.png; sourceTree = "<group>"; };
+		F728731722C8D0E0001B58A5 /* SwiftyUI_Header.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SwiftyUI_Header.png; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,7 +195,7 @@
 		3D9C429B227458E8000A6585 /* Configs */ = {
 			isa = PBXGroup;
 			children = (
-				F728731622C8CF5B001B58A5 /* SwiftyUI_Header.png */,
+				F728731722C8D0E0001B58A5 /* SwiftyUI_Header.png */,
 				3D9C429C227458E8000A6585 /* SwiftyUI.plist */,
 				3D9C429D227458E8000A6585 /* SwiftyUITests.plist */,
 				3D9C42D422745B48000A6585 /* SwiftyUI.podspec */,
@@ -497,6 +498,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F728731822C8D0E1001B58A5 /* SwiftyUI_Header.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
