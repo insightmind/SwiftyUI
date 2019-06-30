@@ -206,12 +206,6 @@ custom_rules:
     name: "Too Much Unindentation"
     message: "Don't unindent code by more than 4 whitespaces."
     severity: warning
-  tuple_index:
-    included: ".*.swift"
-    regex: '(\$\d|\w*[^\d \(\[\{])\.\d'
-    name: "Tuple Index"
-    message: "Prevent unwraping tuples by their index – define a typealias with named components instead."
-    severity: warning
   unnecessary_case_break:
     included: ".*.swift"
     regex: '(case |default)(?:[^\n\}]+\n){2,}\s*break *\n|\n *\n *break(?:\n *\n|\n *\})'

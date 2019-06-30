@@ -12,7 +12,7 @@ import SwiftyUI
 struct ContentView: View {
     var body: some View {
         Text(/*@START_MENU_TOKEN@*/"Hello World!"/*@END_MENU_TOKEN@*/)
-            .color(Color(hex: "#000000"))
+            .color(Color(hex: "#000000", opacity: 0.5))
             .frame(CGSize(squareFrom: 200))
     }
 }

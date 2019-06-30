@@ -19,8 +19,8 @@ public extension Color {
     ///
     /// - Parameter colorSpace: The colorspace in which this color is represented.
     /// - Parameter hex: The hex value of the color as a String
-    init?(_ colorSpace: Color.RGBColorSpace = .sRGB, hex: String) {
-        let red, green, blue, opacity: Double
+    init?(_ colorSpace: Color.RGBColorSpace = .sRGB, hex: String, opacity: Double) {
+        let red, green, blue, alpha: Double
         var hexColor: String
 
         // We need to check whether the hex string starts with a hashtag
@@ -33,17 +33,8 @@ public extension Color {
             hexColor = hex
         }
 
-        let hexSize = 8
-
-        // We need at least 8 digits to represent the hex color. So for we cut the rest or add 0 to it
-        if hexColor.count < hexSize {
-            let difference = hexSize - hexColor.count
-            (0..<difference).forEach { _ in hexColor.append("F") }
-        } else if hexColor.count > hexSize {
-            let index = hexColor.index(hexColor.startIndex, offsetBy: hexSize)
-            hexColor = String(hexColor[index...])
-        }
-
+        // We need exactly 6 digits to represent the hex color properties.
+        guard hexColor.count == 6 else { return nil }
         let scanner = Scanner(string: hexColor)
         var hexNumber: UInt64 = 0
 
@@ -54,9 +45,11 @@ public extension Color {
         red = Double((hexNumber & 0xff000000) >> 24) / 255
         green = Double((hexNumber & 0x00ff0000) >> 16) / 255
         blue = Double((hexNumber & 0x0000ff00) >> 8) / 255
-        opacity = Double(hexNumber & 0x000000ff) / 255
+
+        // We clamp the opacity by a range from (0...1)
+        alpha = opacity > 1 ? 1 : (opacity < 0 ? 0 : opacity)
 
         // We use our default color intializer to create the color.
-        self.init(colorSpace, red: red, green: green, blue: blue, opacity: opacity)
+        self.init(colorSpace, red: red, green: green, blue: blue, opacity: alpha)
     }
 }
