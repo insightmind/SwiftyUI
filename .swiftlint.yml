@@ -14,8 +14,6 @@ opt_in_rules:
 - explicit_type_interface
 - fallthrough
 - fatal_error_message
-- file_name
-- file_types_order
 - first_where
 - is_disjoint
 - joined_default_parameter
@@ -78,120 +76,21 @@ explicit_type_interface:
   excluded:
     - local
 
-file_name:
-  suffix_pattern: "Extensions?|\\+.*"
-
-file_types_order:
-  order:
-    - supporting_type
-    - main_type
-    - extension
-
 identifier_name:
   max_length: 60
-  excluded:
-    - id
 
 line_length: 200
 
 nesting:
   type_level: 3
 
-type_contents_order:
-  order:
-    - case
-    - [type_alias, associated_type]
-    - subtype
-    - type_property
-    - ib_inspectable
-    - instance_property
-    - ib_outlet
-    - initializer
-    - type_method
-    - view_life_cycle_method
-    - ib_action
-    - other_method
-    - subscript
-
 # Custom Rules
 custom_rules:
-  class_name_suffix_collection_view_controller:
-    included: ".*.swift"
-    regex: 'class +\w+(?<!CollectionViewController) *(?:<[^>]+>)? *: +\w+CollectionViewController'
-    name: "Class Name Suffix View Controller"
-    message: "All `CollectionViewController` subclasses should end on `CollectionViewController`."
-    severity: warning
-  class_name_suffix_table_view_controller:
-    included: ".*.swift"
-    regex: 'class +\w+(?<!TableViewController) *(?:<[^>]+>)? *: +\w+TableViewController'
-    name: "Class Name Suffix View Controller"
-    message: "All `TableViewController` subclasses should end on `TableViewController`."
-    severity: warning
-  class_name_suffix_view_controller:
-    included: ".*.swift"
-    regex: 'class +\w+(?<!ViewController) *(?:<[^>]+>)? *: +\w+ViewController'
-    name: "Class Name Suffix View Controller"
-    message: "All `ViewController` subclasses should end on `ViewController`."
-    severity: warning
   closure_params_parantheses:
     included: ".*.swift"
     regex: '\{\s*\((?!self)[^):]+\)\s*in'
     name: "Unnecessary Closure Params Parantheses"
     message: "Don't use parantheses around non-typed parameters in a closure."
-    severity: warning
-  color_literal:
-    included: ".*.swift"
-    regex: '#colorLiteral\('
-    name: "Color Literal"
-    message: "Don't use color literals – use asset catalog and SwiftGen access instead."
-    severity: warning
-  comment_type_note:
-    included: ".*.swift"
-    regex: '// *(?:WORKAROUND|HACK|WARNING)[:\\s]'
-    name: "Comment Type NOTE"
-    message: "Use a '// NOTE:' comment instead."
-    severity: warning
-  comment_type_refactor:
-    included: ".*.swift"
-    regex: '// *(?:TODO|NOTE)[:\\s][^\n]*(?:refactor|REFACTOR|Refactor)'
-    name: "Comment Type REFACTOR"
-    message: "Use a '// REFACTOR:' comment instead."
-    severity: warning
-  comment_type_todo:
-    included: ".*.swift"
-    regex: '// *(?:BUG|MOCK|FIXME|RELEASE|TEST)[:\\s]'
-    name: "Comment Type TODO"
-    message: "Use a '// TODO:' comment instead."
-    severity: warning
-  controller_class_name_suffix:
-    included: ".*.swift"
-    regex: 'class +\w+(?<!View|Flow|Model)Controller'
-    name: "Controller Class Name Suffix"
-    message: "Only use the `Controller` class name suffix for ViewControllers or FlowControllers."
-    severity: warning
-  debug_log_level:
-    included: ".*.swift"
-    regex: 'log.debug\('
-    name: "Debug Log Level"
-    message: "Make sure to remove all debug log levels before committing."
-    severity: warning
-  dynamic_color_reference:
-    included: ".*.swift"
-    regex: 'UIColor\(\s*named:\s*\"'
-    name: "Dynamic Color Reference"
-    message: "Don't use dynamic color references – use SwiftGen & Color instead."
-    severity: warning
-  dynamic_storyboard_reference:
-    included: ".*.swift"
-    regex: 'UIStoryboard\(\s*name:\s*\"'
-    name: "Dynamic Storyboard Reference"
-    message: "Don't use dynamic storyboard references – use SwiftGen & StoryboardScene instead."
-    severity: warning
-  dynamic_string_reference:
-    included: ".*.swift"
-    regex: 'NSLocalizedString\s*\('
-    name: "Dynamic String Reference"
-    message: "Don't use dynamic localization string references via code strings – use SwiftGen & L10n instead."
     severity: warning
   empty_init_body:
     included: ".*.swift"
@@ -211,30 +110,6 @@ custom_rules:
     name: "Empty Type"
     message: "Don't keep empty types in code without commenting inside why they are needed or a `// TODO: not yet implemented`."
     severity: warning
-  flow_controller_variable_naming:
-    included: ".*.swift"
-    regex: '(?:let|var) +\w*(?:fc|FC|Fc|flowC|flowController|FlowController) *='
-    name: "Flow Controller Variable Naming"
-    message: "Always name your flow controller variables with the suffix `FlowCtrl`."
-    severity: warning
-  handyswift_delay:
-    included: ".*.swift"
-    regex: 'DispatchQueue\.\S+\.asyncAfter\(deadline:'
-    name: "HandySwift Delay"
-    message: "Use the `delay(by:qosClass:)` method of HandySwift instead of DispatchQueue for delayed code."
-    severity: warning
-  handyswift_delay_time_interval:
-    included: ".*.swift"
-    regex: 'delay\(by: ?\d'
-    name: "HandySwift Delay TimeInterval"
-    message: "Use one of the HandySwift TimeInterval extension methods like `.milliseconds(100)` instead."
-    severity: warning
-  handyswift_time_interval:
-    included: ".*.swift"
-    regex: ':\s*(?:Dispatch)?TimeInterval\s*=\s*(?:[1-9]|0\.0*[1-9])'
-    name: "HandySwift TimeInterval"
-    message: "Use one of the HandySwift (Dispatch)TimeInterval extension methods like `.milliseconds(100)` instead."
-    severity: warning
   if_as_guard:
     included: ".*.swift"
     regex: '(?<=\n) *if [^\{]+\{\s*return\s*(?:nil){0,1}([^a-zA-z\n]*)\n*\s*\}(?! *else)'
@@ -246,24 +121,6 @@ custom_rules:
     regex: '\(\S+\?\.\S+\)!'
     name: "Late Force Unwrapping"
     message: "Don't use ? first to force unwrap later – directly unwrap within the parantheses."
-    severity: warning
-  local_l10n:
-    included: ".*.swift"
-    regex: 'func \S+\s*\{\s*[^\}]*let l10n'
-    name: "Local l10n"
-    message: "Don't name local variable `l10n` – use a property instead and further specify with `localL10n` if needed."
-    severity: warning
-  log_prefix:
-    included: ".*.swift"
-    regex: 'log\.(?:verbose|debug|info|warning|error)\("(?:verbose|debug|info|warning|error).*"\)'
-    name: "Logging Prefix"
-    message: "Don't use logging prefixes with log.verbose/debug/info/warning/error – done automatically."
-    severity: warning
-  multiple_closure_params:
-    included: ".*.swift"
-    regex: '\n *(?:[^\.\n=]+\.)+[^\(\s]+\([^\{\n]+\{[^\}\n]+\}\)\s*\{'
-    name: "Multiple Closure Params"
-    message: "Don't use multiple in-line closures – save one or more of them to variables instead."
     severity: warning
   none_case_enum:
     included: ".*.swift"
@@ -325,12 +182,6 @@ custom_rules:
     name: "Singleton Shared Single Object"
     message: "Singletons with a `shared` object (real Singletons) should not have other static let properties. Use `default` instead (if needed)."
     severity: warning
-  swiftybeaver_logging:
-    included: ".*.swift"
-    regex: 'print\([^\n]+\)'
-    name: "SwiftyBeaver Logging"
-    message: "Don't use print – use log.verbose/debug/info/warning/error instead."
-    severity: warning
   switch_associated_value_style:
     included: ".*.swift"
     regex: 'case\s+[^\(][^\n]*(?:\(let |[^\)], let)'
@@ -372,24 +223,6 @@ custom_rules:
     regex: 'var \S+\s*:\s*[^\s]+\?\s*=\s*nil'
     name: "Unnecessary Nil Assignment"
     message: "Don't assign nil as a value when defining an optional type – it's nil by default."
-    severity: warning
-  vertical_whitespaces_around_mark:
-    included: ".*.swift"
-    regex: '\/\/\s*MARK:[^\n]*(\n\n)|(\n\n\n)[ \t]*\/\/\s*MARK:|[^\s{]\n[^\n\/]*\/\/\s*MARK:'
-    name: "Vertical Whitespaces Around MARK:"
-    message: "Include a single vertical whitespace (empty line) before and none after MARK: comments."
-    severity: warning
-  view_controller_variable_naming:
-    included: ".*.swift"
-    regex: '(?:let|var) +\w*(?:vc|VC|Vc|viewC|viewController|ViewController) *='
-    name: "View Controller Variable Naming"
-    message: "Always name your view controller variables with the suffix `ViewCtrl`."
-    severity: warning
-  whitespace_around_range_operators:
-    included: ".*.swift"
-    regex: '\w\.\.[<\.]\w'
-    name: "Whitespace around Range Operators"
-    message: "A range operator should be surrounded by a single whitespace."
     severity: warning
   whitespace_comment_start:
     included: ".*.swift"

@@ -6,5 +6,5 @@
 //  Copyright © 2019 SwiftyUI. All rights reserved.
 //
 
-// Include Foundation
-@_exported import Foundation
+// Include SwiftUI
+@_exported import SwiftUI

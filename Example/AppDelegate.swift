@@ -6,14 +6,19 @@
 //  Copyright © 2019 SwiftyUI. All rights reserved.
 //
 
-import UIKit
+import SwiftUI
 
 // MARK: - AppDelegate
 /// The AppDelegate
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {ß
+class AppDelegate: UIResponder, UIApplicationDelegate {
     /// The UIWindow
     var window: UIWindow?
+
+    /// The RootViewController
+    var rootViewController: UIViewController {
+        return UIHostingController(rootView: ContentView())
+    }
 
     /// Application did finish launching with options
     ///
@@ -24,6 +29,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {ß
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Initialize UIWindow
         self.window = .init(frame: UIScreen.main.bounds)
+        // Set RootViewController
+        self.window?.rootViewController = self.rootViewController
         // Make Key and Visible
         self.window?.makeKeyAndVisible()
         // Return positive launch

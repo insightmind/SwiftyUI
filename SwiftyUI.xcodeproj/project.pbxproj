@@ -35,6 +35,11 @@
 		F728732622C8D812001B58A5 /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F728732422C8D812001B58A5 /* ViewExtension.swift */; };
 		F728732722C8D812001B58A5 /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F728732422C8D812001B58A5 /* ViewExtension.swift */; };
 		F728732822C8D812001B58A5 /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F728732422C8D812001B58A5 /* ViewExtension.swift */; };
+		F728732B22C8DE46001B58A5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F728732A22C8DE46001B58A5 /* ContentView.swift */; };
+		F728732F22C8E09D001B58A5 /* CGSizeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F728732E22C8E09D001B58A5 /* CGSizeExtension.swift */; };
+		F728733022C8E09D001B58A5 /* CGSizeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F728732E22C8E09D001B58A5 /* CGSizeExtension.swift */; };
+		F728733122C8E09D001B58A5 /* CGSizeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F728732E22C8E09D001B58A5 /* CGSizeExtension.swift */; };
+		F728733222C8E09D001B58A5 /* CGSizeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F728732E22C8E09D001B58A5 /* CGSizeExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,6 +118,9 @@
 		F728731A22C8D293001B58A5 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		F728731F22C8D797001B58A5 /* LengthExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LengthExtension.swift; sourceTree = "<group>"; };
 		F728732422C8D812001B58A5 /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
+		F728732922C8DDCA001B58A5 /* Example.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Example.entitlements; sourceTree = "<group>"; };
+		F728732A22C8DE46001B58A5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		F728732E22C8E09D001B58A5 /* CGSizeExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGSizeExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -227,7 +235,7 @@
 		3D9C42A0227458FA000A6585 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				F728731922C8D270001B58A5 /* Extensions */,
+				F728731922C8D270001B58A5 /* Extension */,
 				3D9C42A122745900000A6585 /* SwiftyUI.swift */,
 			);
 			path = Sources;
@@ -245,7 +253,9 @@
 		3D9C43222274629B000A6585 /* Example */ = {
 			isa = PBXGroup;
 			children = (
+				F728732922C8DDCA001B58A5 /* Example.entitlements */,
 				3D9C43232274629B000A6585 /* AppDelegate.swift */,
+				F728732A22C8DE46001B58A5 /* ContentView.swift */,
 				3D9C4333227462B9000A6585 /* Resources */,
 			);
 			path = Example;
@@ -261,14 +271,31 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		F728731922C8D270001B58A5 /* Extensions */ = {
+		F728731922C8D270001B58A5 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				F728732D22C8E08A001B58A5 /* CoreGraphics */,
+				F728732C22C8E083001B58A5 /* SwiftUI */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		F728732C22C8E083001B58A5 /* SwiftUI */ = {
 			isa = PBXGroup;
 			children = (
 				F728731A22C8D293001B58A5 /* ColorExtension.swift */,
 				F728731F22C8D797001B58A5 /* LengthExtension.swift */,
 				F728732422C8D812001B58A5 /* ViewExtension.swift */,
 			);
-			path = Extensions;
+			path = SwiftUI;
+			sourceTree = "<group>";
+		};
+		F728732D22C8E08A001B58A5 /* CoreGraphics */ = {
+			isa = PBXGroup;
+			children = (
+				F728732E22C8E09D001B58A5 /* CGSizeExtension.swift */,
+			);
+			path = CoreGraphics;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -660,6 +687,7 @@
 			files = (
 				3D9C42A222745900000A6585 /* SwiftyUI.swift in Sources */,
 				F728731B22C8D293001B58A5 /* ColorExtension.swift in Sources */,
+				F728732F22C8E09D001B58A5 /* CGSizeExtension.swift in Sources */,
 				F728732522C8D812001B58A5 /* ViewExtension.swift in Sources */,
 				F728732022C8D797001B58A5 /* LengthExtension.swift in Sources */,
 			);
@@ -671,6 +699,7 @@
 			files = (
 				3D9C42B1227459C1000A6585 /* SwiftyUI.swift in Sources */,
 				F728731C22C8D293001B58A5 /* ColorExtension.swift in Sources */,
+				F728733022C8E09D001B58A5 /* CGSizeExtension.swift in Sources */,
 				F728732622C8D812001B58A5 /* ViewExtension.swift in Sources */,
 				F728732122C8D797001B58A5 /* LengthExtension.swift in Sources */,
 			);
@@ -682,6 +711,7 @@
 			files = (
 				3D9C42BF227459F6000A6585 /* SwiftyUI.swift in Sources */,
 				F728731D22C8D293001B58A5 /* ColorExtension.swift in Sources */,
+				F728733122C8E09D001B58A5 /* CGSizeExtension.swift in Sources */,
 				F728732722C8D812001B58A5 /* ViewExtension.swift in Sources */,
 				F728732222C8D797001B58A5 /* LengthExtension.swift in Sources */,
 			);
@@ -693,6 +723,7 @@
 			files = (
 				3D9C42CD22745A28000A6585 /* SwiftyUI.swift in Sources */,
 				F728731E22C8D293001B58A5 /* ColorExtension.swift in Sources */,
+				F728733222C8E09D001B58A5 /* CGSizeExtension.swift in Sources */,
 				F728732822C8D812001B58A5 /* ViewExtension.swift in Sources */,
 				F728732322C8D797001B58A5 /* LengthExtension.swift in Sources */,
 			);
@@ -726,6 +757,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F728732B22C8DE46001B58A5 /* ContentView.swift in Sources */,
 				3D9C43242274629B000A6585 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -819,8 +851,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -879,8 +911,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -978,7 +1010,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 9.0;
+				TVOS_DEPLOYMENT_TARGET = 13.0;
 			};
 			name = Debug;
 		};
@@ -1008,7 +1040,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 9.0;
+				TVOS_DEPLOYMENT_TARGET = 13.0;
 			};
 			name = Release;
 		};
@@ -1038,7 +1070,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+				WATCHOS_DEPLOYMENT_TARGET = 6.0;
 			};
 			name = Debug;
 		};
@@ -1068,7 +1100,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+				WATCHOS_DEPLOYMENT_TARGET = 6.0;
 			};
 			name = Release;
 		};
@@ -1093,7 +1125,7 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.niklasbuelow.SwiftyUI.SwiftyUI-macOS";
 				PRODUCT_NAME = SwiftyUI;
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1124,7 +1156,7 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.niklasbuelow.SwiftyUI.SwiftyUI-macOS";
 				PRODUCT_NAME = SwiftyUI;
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1253,10 +1285,14 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_ENTITLEMENTS = Example/Example.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DERIVE_UIKITFORMAC_PRODUCT_BUNDLE_IDENTIFIER = YES;
+				DEVELOPMENT_TEAM = V6KWUV4A4U;
 				INFOPLIST_FILE = Example/Resources/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1264,6 +1300,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.niklasbuelow.SwiftyUI-iOS.Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
+				SUPPORTS_UIKITFORMAC = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1274,10 +1312,14 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_ENTITLEMENTS = Example/Example.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DERIVE_UIKITFORMAC_PRODUCT_BUNDLE_IDENTIFIER = YES;
+				DEVELOPMENT_TEAM = V6KWUV4A4U;
 				INFOPLIST_FILE = Example/Resources/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1285,6 +1327,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.niklasbuelow.SwiftyUI-iOS.Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
+				SUPPORTS_UIKITFORMAC = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
