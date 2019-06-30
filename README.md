@@ -1,5 +1,5 @@
 <p align="center">
-   <img width="200" src="SwiftyUI_Header.png" alt="SwiftyUI Header">
+   <img width="100%" src="SwiftyUI_Header.png" alt="SwiftyUI Header">
 </p>
 
 <p align="center">
