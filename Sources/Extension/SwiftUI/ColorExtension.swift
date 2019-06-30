@@ -12,13 +12,16 @@ public extension Color {
     /// Creates an instance of Color by using a colors hex representation
     ///
     /// This intiializer fails if the hexString is invalid.
+    /// If the size of the hex is to small this method adds "F"
+    /// If the size is to big we cut the rest of the String.
+    ///
     /// You can use this method without a preceding and with a preceding **#** symbol.
     ///
     /// - Parameter colorSpace: The colorspace in which this color is represented.
     /// - Parameter hex: The hex value of the color as a String
     init?(_ colorSpace: Color.RGBColorSpace = .sRGB, hex: String) {
         let red, green, blue, opacity: Double
-        let hexColor: String
+        var hexColor: String
 
         // We need to check whether the hex string starts with a hashtag
         // as standardized in hexadecimal usage.
@@ -30,8 +33,17 @@ public extension Color {
             hexColor = hex
         }
 
-        // We need at least 8 digits to represent the hex color
-        guard hexColor.count == 8 else { return nil }
+        let hexSize = 8
+
+        // We need at least 8 digits to represent the hex color. So for we cut the rest or add 0 to it
+        if hexColor.count < hexSize {
+            let difference = hexSize - hexColor.count
+            (0..<difference).forEach { _ in hexColor.append("F") }
+        } else if hexColor.count > hexSize {
+            let index = hexColor.index(hexColor.startIndex, offsetBy: hexSize)
+            hexColor = String(hexColor[index...])
+        }
+
         let scanner = Scanner(string: hexColor)
         var hexNumber: UInt64 = 0
 

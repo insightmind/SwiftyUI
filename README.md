@@ -84,7 +84,7 @@ Contributions are very welcome 🙌
 
 ```
 SwiftyUI
-Copyright (c) 2019 SwiftyUI me@niklasbuelow.com
+Copyright (c) 2019 SwiftyUI me@niklasbuelow.com | privat@janekwunderlich.de
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
