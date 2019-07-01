@@ -1,0 +1,7 @@
+# SwiftyUI document generator jazzy settings
+
+copyright: Copyright 2019 SwiftyUI
+author: Niklas Bülow
+xcodebuild_arguments: [-target, SwiftyUI-iOS]
+clean: true
+output: ./Documentation
